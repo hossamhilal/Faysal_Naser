@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'URW-DIN';
+  src: url('URW-DIN.eot');
+  src: url('URW-DIN.eot?#iefix') format('embedded-opentype'),
+       url('URW-DIN.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'URWDINArabic-Regular';
+  src: url('URWDINArabic-Regular.svg#URWDINArabic-Regular') format('svg'),
+       url('URWDINArabic-Regular.ttf') format('truetype'),
+       url('URWDINArabic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+

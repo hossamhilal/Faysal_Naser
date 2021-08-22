@@ -1,0 +1,619 @@
+/*=================================================================================*/
+/*=================================================================================*/
+/*==========================||---------------------------||========================*/
+/*==========================|| Developed By HOSSAM HILAL ||========================*/
+/*==========================||---------------------------||========================*/
+/*====================================||------||===================================*/
+/*====================================|| 2021 ||===================================*/
+/*====================================||------||===================================*/
+/*=================================================================================*/
+/*=================================================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap');
+
+:root {
+    --primaryColor: #FFC64E;
+    --secondaryColor: #3AA3DB;
+    --white: #fff;
+    --black: #202020;
+    --text: #6B6B6B;
+    --textLight: #ABABAB;
+    --opacity: rgba(58, 163, 219, 0.1);
+    --bg: #191919;
+    --bgLight: #1E1E1E;
+    --border: 1px solid #F3F3F3;
+    --unnamed-color-ffffff: #FFFFFF;
+    --unnamed-color-ffc64e: #FFC64E;
+    --unnamed-color-3c3c3c: #3C3C3C;
+    --unnamed-color-ffea70: #FFEA70;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    direction: ltr;
+    text-align: left;
+    background: var(--bg);
+}
+
+.stopScroll {
+    overflow: hidden;
+}
+
+p {
+    color: var(--text);
+    margin: 0;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+input:active,
+input:focus,
+select:active,
+select:focus,
+textarea:focus,
+textarea:active {
+    box-shadow: none;
+    outline: 0;
+}
+
+/*==========================||---------------------------||========================*/
+/*==========================||         MAIN BUTTONS      ||========================*/
+/*==========================||---------------------------||========================*/
+
+.primaryBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent linear-gradient(180deg, #FFBF48 14%, #FFF47A 50%, #FFBF48 100%) 0% 0% no-repeat padding-box;
+    color: var(--white);
+    height: 45px;
+    border: 0;
+    border-radius: 5px;
+    width: 150px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    text-transform: uppercase;
+}
+
+.primaryBtn::before,
+.primaryBtn::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: var(--primaryColor);
+    transition: all .5s ease-in-out;
+}
+
+.primaryBtn:hover::before {
+    transform: rotateX(90deg);
+}
+
+.primaryBtn:hover::after {
+    transform: rotateY(90deg);
+}
+
+.primaryBtn span {
+    position: relative;
+    z-index: 2;
+}
+
+.primaryBtn:hover,
+.primaryBtn:hover span {
+    color: var(--white);
+}
+
+@media (min-width:1700px) {
+    .container {
+        max-width: 1420px;
+    }
+}
+
+@media (min-width:1500px) {
+    .container {
+        max-width: 1340px;
+    }
+}
+
+
+/*==========================||---------------------------||========================*/
+/*==========================||           Header          ||========================*/
+/*==========================||---------------------------||========================*/
+
+.header {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.topHeader {
+    border-bottom: 1px solid #292626;
+    padding: 10px 0;
+}
+
+.topHeader .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topHeader p {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.language {
+    margin-inline-start: 15px;
+    padding-inline-end: 20px;
+    position: relative;
+}
+
+.language::after {
+    content: '';
+    width: 12px;
+    height: 9px;
+    position: absolute;
+    top: 6px;
+    right: 0;
+    background: transparent linear-gradient(180deg, #FFBF48 14%, #FFF47A 50%, #FFBF48 100%) 0% 0% no-repeat padding-box;
+    clip-path: polygon(100% 0%, 0% 0%, 50% 100%);
+}
+
+.language a {
+    display: flex;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.HeaderNav {
+    padding: 50px 0;
+}
+
+.logo img {
+    max-width: 200px;
+}
+
+.mainNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mainMenu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mainMenu a {
+    color: var(--text);
+    padding: 10px 20px;
+    margin-inline-end: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;
+}
+
+.mainMenu a:hover,
+.mainMenu .active a {
+    color: var(--primaryColor);
+}
+
+.mainMenu a::before {
+    content: "";
+    width: 15px;
+    height: 1px;
+    border-radius: 5px;
+    background: var(--text);
+    position: absolute;
+    left: 0;
+    top: calc(50% - .5px);
+}
+
+.mainMenu a:hover::before,
+.mainMenu .active a::before {
+    background: var(--primaryColor);
+}
+
+.mainBtns {
+    display: flex;
+    align-items: center;
+}
+
+.language img {
+    width: 40px;
+}
+
+.menuBtn {
+    width: 25px;
+    height: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-inline-start: 25px;
+    cursor: pointer;
+}
+
+.menuBtn span {
+    background: var(--text);
+    height: 2px;
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+
+.menuBtn span:nth-child(2) {
+    width: 70%;
+}
+
+.menuBtn span:nth-child(3) {
+    width: 40%;
+}
+
+.menuBtn:hover span {
+    width: 100%;
+    background: var(--primaryColor);
+}
+
+.navOverlay {
+    background: var(--bgOpacity);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 98;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navOverlay.opend {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.headerSlider img {
+    height: 500px;
+}
+
+.headerSlider .item {
+    position: relative;
+}
+
+.headerSlider .hover {
+    color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.headerSlider h1 {
+    font-size: 80px;
+    line-height: 120px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.headerSlider .owl-item.active h1 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+    animation-delay: 0.3s;
+}
+
+.follow {
+    display: flex;
+    align-items: center;
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    position: absolute;
+    left: -90px;
+    bottom: 220px;
+    color: var(--white);
+    font-size: 13px;
+}
+
+
+.follow label {
+    margin-bottom: 0;
+    margin-inline-end: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.social {
+    display: flex;
+}
+
+.social a {
+    display: flex;
+    color: var(--white);
+    font-size: 14px;
+    margin: 0 10px;
+    transition: all .3s ease-in-out;
+}
+
+.social a:hover {
+    color: var(--primaryColor);
+}
+
+.follow label::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--text);
+    margin-inline-start: 8px;
+}
+
+@media screen and (max-width:768px) {
+    .logo img {
+        max-width: 160px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .mainMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 270px;
+        background: var(--bgBlue);
+        z-index: 99;
+        padding: 40px 0;
+        transition: all .5s ease-in-out;
+        transform: translateX(-100%);
+    }
+
+    .mainMenu ul {
+        flex-direction: column;
+    }
+
+    .mainMenu ul li {
+        padding: 10px;
+    }
+
+    .mainMenu.opend {
+        transform: translateX(0%) !important;
+    }
+
+    .menuBtn {
+        display: flex;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1200px) {}
+
+
+/*==========================||---------------------------||========================*/
+/*==========================||     Service Request       ||========================*/
+/*==========================||---------------------------||========================*/
+
+.secPadding {
+    padding: 60px 0;
+}
+
+.requestDetails {
+    background: url('../images/pic.png') no-repeat;
+    background-size: cover;
+}
+
+.serviceRequest h2 {
+    font-size: 44px;
+    color: var(--primaryColor);
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.serviceRequest p {
+    margin-bottom: 30px;
+    font-size: 17px;
+    line-height: 35px;
+    color: var(--white);
+}
+
+.serviceRequest .primaryBtn {
+    min-width: 170px;
+}
+
+/*==========================||---------------------------||========================*/
+/*==========================||             Team          ||========================*/
+/*==========================||---------------------------||========================*/
+
+.teamVector {
+    max-width: 400px;
+    margin: auto;
+    padding-top: 15px;
+    padding-inline-start: 15px;
+    position: relative;
+}
+
+.teamVector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--primaryColor);
+    width: 43%;
+    height: 43%;
+}
+
+.teamVector img {
+    position: relative;
+}
+
+/*==========================||---------------------------||========================*/
+/*==========================||          Services         ||========================*/
+/*==========================||---------------------------||========================*/
+
+.sectionTitle {
+    text-align: center;
+    color: var(--primaryColor);
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.service {
+    background: var(--bgLight);
+    padding: 15px;
+    text-align: center;
+    height: 248px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.serviceIcon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.service img {
+    filter: brightness(0) invert(1);
+}
+
+.service:hover img {
+    filter: none;
+}
+
+.service h3 {
+    color: var(--white);
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.service:hover h3 {
+    color: var(--primaryColor);
+}
+
+/*==========================||---------------------------||========================*/
+/*==========================||           Work            ||========================*/
+/*==========================||---------------------------||========================*/
+
+.work {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.work img {
+    height: 100%;
+    transition: all .5s ease-in-out;
+    opacity: .7;
+}
+
+.work:hover img {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.animate-1:hover img {
+    transform-origin: 50px 50px;
+}
+
+.animate-2:hover img {
+    transform-origin: bottom right 60px;
+}
+
+.animate-3:hover img {
+    transform-origin: top right 60px;
+}
+
+.work .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.2);
+    color: var(--white);
+    transition: all .5s ease-in-out;
+}
+
+.work:hover .hover {
+    background: rgba(0,0,0,.5);
+}
+
+.work h3 {
+    font-size: 21px;
+}
+
+.work h5 {
+    font-size: 13px;
+    font-weight: 200;
+}
+
+
+
+
+/*==========================||---------------------------||========================*/
+/*==========================||          Contact          ||========================*/
+/*==========================||---------------------------||========================*/
+
+
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    font-size: 13px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.field .form-control {
+    border: var(--border);
+    height: 45px;
+}
+
+.field .form-control::placeholder {
+    color: var(--textLight);
+    font-size: 13px;
+}
+
+.textareaField .form-control {
+    height: 120px;
+    resize: none;
+}
+
+@media screen and (max-width:768px) {}
+
+/*==========================||---------------------------||========================*/
+/*==========================||           Footer          ||========================*/
+/*==========================||---------------------------||========================*/
