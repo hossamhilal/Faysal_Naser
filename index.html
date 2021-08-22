@@ -105,7 +105,7 @@
     <!-- service request  -->
     <div class="serviceRequest secPadding">
         <div class="container">
-            <div class="requestDetails secPadding">
+            <div class="requestDetails">
                 <div class="row">
                     <div class="col-12 col-sm-6" data-wow-delay=".1s">
                         <h2> Service request </h2>
@@ -234,11 +234,12 @@
         </div>
     </div>
 
-    <div class="institutional" id="Institutional">
+    <!-- Institutional  -->
+    <div class="institutional secPadding" id="Institutional">
         <div class="container">
             <div class="countsWrapper">
                 <div class="row">
-                    <div class="col-12 col-sm-8">
+                    <div class="col-12 col-sm-8 col-md-7">
                         <h2> Institutional </h2>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat non dolor sed consequat. Ut eu mi sed quam volutpat rutrum p. </p>
                         <div class="features">
@@ -272,12 +273,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-4">
+                    <div class="col-12 col-sm-4 col-md-5">
                         <div class="video">
-                            <div class="videoHover">
-                                <div class="playVideo" id="playVideo"> <span></span></div>
+                            <div class="videoHover" style="background: url('images/video.jpg'); background-size: cover;">
+                                <div class="playVideo" id="playVideo"> <span> <i class="icofont-ui-play"></i> </span></div>
                             </div>
-                            <video controls poster="images/video.jpg" id="video">
+                            <video controls id="video">
                                 <source src="videos/video1.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -365,8 +366,9 @@
         (function($) {
             // Play Video 
             let playButton = document.getElementById('playVideo');
+            let parent = $(playButton).parent();
             playButton.addEventListener('click', function() {
-                $(this).hide();
+                $(parent).hide();
                 if (video.paused == true) {
                     video.play();    
                 } else {
@@ -377,7 +379,7 @@
             // show Play Button 
             let videoBox = document.getElementById("video");
             videoBox.onpause = function() {
-                $(playButton).show();  
+                $(parent).show();  
             };
 
             // Play Video 
@@ -386,7 +388,7 @@
                 $('.listLesson').removeClass('active');
                 $(this).addClass('active');
                 console.log(willPlayed);
-                $(playButton).show();  
+                $(parent).show();  
                 let videoTag = document.getElementById('video');
                 videoTag.src = willPlayed;
                 videoTag.load();
