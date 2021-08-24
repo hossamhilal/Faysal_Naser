@@ -1362,3 +1362,13 @@ textarea:active {
     background: url(../images/pic-ar.png) no-repeat;
     background-size: cover;
 }
+
+.ar .custom-radio label::before {
+    left: auto;
+    right: 0;
+}
+
+.ar .custom-radio input:checked+label::after {
+    left: auto;
+    right: 5px;
+}
