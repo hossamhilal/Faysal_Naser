@@ -4,8 +4,9 @@
 
     // OPEN SIDE  MENU 
     $('.menuBtn').on('click', function(){
+        $(this).toggleClass('open');
         $('.mainMenu').toggleClass('opend');
-        $('.navOverlay').addClass('opend');  
+        $('.navOverlay').toggleClass('opend');  
         setTimeout(function(){
             $('body').addClass('stopScroll');
         }, 200); 
@@ -15,6 +16,7 @@
     $('.navOverlay').on('click', function(){
         $(this).removeClass('opend');
         $('.mainMenu').removeClass('opend');  
+        $('.menuBtn').removeClass('open');
         $('body').removeClass('stopScroll');  
     });
 
@@ -46,6 +48,34 @@
             }
         }
     });
+
+
+    // Header OWL 
+    $('.owlParteners').owlCarousel({
+        rtl: rtlVal,
+        margin: 0,
+        autoplay: true,
+        loop: true,
+        nav: false,
+        dots: false,
+        autoplaySpeed : 2000,
+        autoplayTimeout : 2000,
+        smartSpeed: 2000 ,
+        navText: ["<i class='icofont-long-arrow-right'></i>", "<i class='icofont-long-arrow-left'></i>"],
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 4
+            },
+            1000: {
+                items: 6
+            }
+        }
+    });
+
+    
 
     // // INPUT FOCUS ANIMATION 
     // $('.inputField input').focus(function(){

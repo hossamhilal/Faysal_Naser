@@ -137,6 +137,18 @@ textarea:active {
     margin-bottom: 60px;
 }
 
+.header::after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    right: 0;
+    background: url('../images/dust1.png') no-repeat;
+    display: block;
+    width: 16%;
+    height: 80%;
+    z-index: -1;
+}
+
 .topHeader {
     border-bottom: 1px solid #292626;
     padding: 10px 0;
@@ -238,6 +250,7 @@ textarea:active {
 }
 
 .menuBtn {
+    position: relative;
     width: 25px;
     height: 18px;
     display: none;
@@ -246,30 +259,103 @@ textarea:active {
     justify-content: space-between;
     margin-inline-start: 25px;
     cursor: pointer;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    z-index: 99;
 }
 
 .menuBtn span {
+    display: block;
+    position: absolute;
     background: var(--text);
-    height: 2px;
-    width: 100%;
-    transition: all .5s ease-in-out;
+    height: 3px;
+    width: 50%;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
 
+.menuBtn span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+}
+
+.menuBtn span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+.menuBtn span:nth-child(1),
 .menuBtn span:nth-child(2) {
-    width: 70%;
+    top: 0px;
 }
 
-.menuBtn span:nth-child(3) {
-    width: 40%;
+.menuBtn span:nth-child(3),
+.menuBtn span:nth-child(4) {
+    top: 10px;
 }
 
+.menuBtn span:nth-child(5),
+.menuBtn span:nth-child(6) {
+    top: 20px;
+}
+
+.menuBtn.open span:nth-child(1),
+.menuBtn.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.menuBtn.open span:nth-child(2),
+.menuBtn.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.menuBtn.open span:nth-child(1) {
+    left: 0px;
+    top: 8px;
+}
+
+.menuBtn.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 9px;
+}
+
+.menuBtn.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+.menuBtn.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+.menuBtn.open span:nth-child(5) {
+    left: 0px;
+    top: 17px;
+}
+
+.menuBtn.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 16px;
+}
+
+.menuBtn.open span ,
 .menuBtn:hover span {
-    width: 100%;
     background: var(--primaryColor);
 }
 
 .navOverlay {
-    background: var(--bgOpacity);
+    background: rgba(0,0,0,.6);
     position: fixed;
     top: 0;
     left: 0;
@@ -367,9 +453,68 @@ textarea:active {
     margin-inline-start: 8px;
 }
 
+@media screen and (max-width:575px) {
+    .follow {
+        position: relative;
+        transform: none;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding: 15px;
+    }
+}
+
 @media screen and (max-width:768px) {
     .logo img {
         max-width: 160px;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .topHeader {
+        padding: 5px 0;
+    }
+
+    .topHeader p {
+        font-size: 12px;
+    }
+
+    .language {
+        padding-inline-end: 15px;
+    }
+
+    .language a {
+        font-size: 12px;
+    }
+
+    .language::after {
+        width: 9px;
+        height: 6px;
+    }
+
+    .HeaderNav {
+        padding: 15px 0;
+    }
+
+    .logo img {
+        max-width: 90px;
+    }
+
+    .HeaderNav .primaryBtn {
+        width: 90px;
+        font-size: 12px;
+        height: 30px;
+    }
+
+    .headerSlider img {
+        height: 260px;
+    }
+
+    .headerSlider h1 {
+        font-size: 20px;
+        line-height: 35px;
     }
 }
 
@@ -380,7 +525,7 @@ textarea:active {
         left: 0;
         height: 100vh;
         width: 270px;
-        background: var(--bgBlue);
+        background: var(--bgLight);
         z-index: 99;
         padding: 40px 0;
         transition: all .5s ease-in-out;
@@ -404,15 +549,44 @@ textarea:active {
     }
 }
 
-@media (min-width:1024px) and (max-width:1200px) {}
-
-
 /*==========================||---------------------------||========================*/
 /*==========================||     Service Request       ||========================*/
 /*==========================||---------------------------||========================*/
 
 .secPadding {
     padding: 60px 0;
+}
+
+.serviceRequest {
+    position: relative;
+}
+
+.serviceRequest::after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    right: 0;
+    background: url('../images/dust2.png') no-repeat;
+    display: block;
+    width: 29%;
+    height: 139%;
+    z-index: -1;
+}
+
+.team::after {
+    display: none;
+}
+
+.serviceRequest::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -48px;
+    background: url('../images/dust3.png') no-repeat;
+    display: block;
+    width: 25%;
+    height: 77%;
+    z-index: -1;
 }
 
 .requestDetails {
@@ -437,6 +611,36 @@ textarea:active {
 
 .serviceRequest .primaryBtn {
     min-width: 170px;
+}
+
+@media screen and (max-width:768px) {
+    .secPadding {
+        padding: 30px 0;
+    }
+    
+    .requestDetails {
+        padding: 0;
+        background-position: bottom right;
+        background-size: 125% 60%;
+    }
+    
+    .serviceRequest h2 {
+        font-size: 30px;
+        line-height: 45px;
+        margin: 0;
+    }
+    
+    .serviceRequest p {
+        font-size: 13px;
+        line-height: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .serviceRequest .primaryBtn {
+        min-width: 150px;
+        height: 40px;
+        font-size: 13px;
+    }
 }
 
 /*==========================||---------------------------||========================*/
@@ -465,9 +669,31 @@ textarea:active {
     position: relative;
 }
 
+@media screen and (max-width:768px) {
+    .teamVector {
+        margin-bottom: 15px;
+    }
+}
+
 /*==========================||---------------------------||========================*/
 /*==========================||          Services         ||========================*/
 /*==========================||---------------------------||========================*/
+
+.services {
+    position: relative;
+}
+
+.services::after {
+    content: '';
+    position: absolute;
+    bottom: -27px;
+    right: 0;
+    background: url('../images/dust4.png') no-repeat;
+    display: block;
+    width: 21%;
+    height: 62%;
+    z-index: -1;
+}
 
 .sectionTitle {
     text-align: center;
@@ -518,6 +744,41 @@ textarea:active {
     color: var(--primaryColor);
 }
 
+@media screen and (max-width:768px) {
+    .sectionTitle {
+        font-size: 30px;
+        line-height: 45px;
+        margin-bottom: 20px;
+    }
+    
+    .services .row {
+        padding: 0 5px;
+    }
+    
+    .services .col-6 {
+        padding: 0 5px;
+    }
+    
+    .service {
+        height: 140px;
+        margin-bottom: 10px;
+    }
+    
+    .serviceIcon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .serviceIcon img {
+        max-width: 100%;
+    }
+    
+    .service h3 {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+
 /*==========================||---------------------------||========================*/
 /*==========================||           Work            ||========================*/
 /*==========================||---------------------------||========================*/
@@ -562,13 +823,13 @@ textarea:active {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background: rgba(0,0,0,.2);
+    background: rgba(0, 0, 0, .2);
     color: var(--white);
     transition: all .5s ease-in-out;
 }
 
 .work:hover .hover {
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
 }
 
 .work h3 {
@@ -578,6 +839,22 @@ textarea:active {
 .work h5 {
     font-size: 13px;
     font-weight: 200;
+    margin: 0;
+}
+
+@media screen and (max-width:768px) {
+    .work {
+        height: 220px;
+        margin-bottom: 15px;
+    }
+    
+    .work .hover {
+        padding: 15px;
+    }
+
+    .work h3 {
+        font-size: 17px;
+    }
 }
 
 /*==========================||---------------------------||========================*/
@@ -654,18 +931,18 @@ textarea:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     width: 190px;
     height: 190px;
     border-radius: 50%;
-    margin-left: -35px;
+    margin-inline-start: -35px;
     margin-bottom: -50px;
 }
 
 .playVideo span {
     width: 50px;
     height: 50px;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -680,14 +957,128 @@ textarea:active {
     color: var(--white);
 }
 
+@media screen and (max-width:425px) {
+    .feature {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .institutional h2 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+    
+    .institutional p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    
+    .features {
+        margin-top: 25px;
+    }
+    
+    .feature h4 {
+        font-size: 16px;
+    }
+    
+    .feature h5 {
+        font-size: 13px;
+        margin: 0;
+    }
+    
+    .playVideo {
+        width: 120px;
+        height: 120px;
+        margin-inline-start: -23px;
+    }
+    
+    .playVideo span {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 40px;
+        margin-inline-start: 10px;
+    }
+}
+
+/*==========================||---------------------------||========================*/
+/*==========================||         Parteners         ||========================*/
+/*==========================||---------------------------||========================*/
+
+.parteners .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.parteners img {
+    filter: grayscale(100%);
+}
+
+.parteners .item:hover img {
+    filter: none;
+}
+
+@media screen and (max-width:768px) {
+    .parteners .item {
+        height: 100px;
+    }
+}
+
 /*==========================||---------------------------||========================*/
 /*==========================||          Contact          ||========================*/
 /*==========================||---------------------------||========================*/
 
+.contact {
+    position: relative;
+}
 
+.contact::before {
+    content: '';
+    position: absolute;
+    bottom: 111px;
+    left: -15%;
+    background: url('../images/dust3.png') no-repeat;
+    display: block;
+    width: 55%;
+    height: 128%;
+    z-index: -1;
+    transform: rotate(55deg);
+}
+
+.contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url('../images/dust4.png') no-repeat;
+    display: block;
+    width: 26%;
+    height: 107%;
+    z-index: -1;
+}
+
+.contact .sectionTitle {
+    margin-bottom: 15px;
+}
+
+.contact .sectionHeader {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contactForm {
+    max-width: 500px;
+    margin: auto;
+}
 
 .field {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .field label {
@@ -697,22 +1088,120 @@ textarea:active {
 }
 
 .field .form-control {
-    border: var(--border);
+    border: 1px solid var(--text);
     height: 45px;
+    background: transparent;
+    font-size: 14px;
+    color: var(--white);
+    border-radius: 4px;
 }
 
 .field .form-control::placeholder {
-    color: var(--textLight);
+    color: var(--text);
     font-size: 13px;
 }
 
-.textareaField .form-control {
-    height: 120px;
-    resize: none;
+.field .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 198, 78, .50);
 }
 
-@media screen and (max-width:768px) {}
+.textareaField .form-control {
+    height: 150px;
+    resize: none;
+    padding: 10px 12px;
+}
+
+.contactForm .primaryBtn {
+    width: 100%;
+}
 
 /*==========================||---------------------------||========================*/
 /*==========================||           Footer          ||========================*/
 /*==========================||---------------------------||========================*/
+
+.footer {
+    background: var(--bgLight);
+}
+
+.footer p {
+    width: 350px;
+    margin: 20px 0 25px;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.footer .social a {
+    margin: 0;
+    margin-inline-end: 20px;
+}
+
+.location {
+    max-width: 242px;
+    margin-inline-start: auto;
+}
+
+.location h6 {
+    font-size: 19px;
+    color: var(--primaryColor);
+    font-weight: 300;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+
+.map {
+    padding: 10px;
+    border: 1px solid var(--text);
+    height: 143px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+@media screen and (max-width:425px) {
+    .map {
+        height: 200px;
+    }
+
+    .location h6 {
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .location {
+        max-width: 100%;
+    }
+    
+    .location h6 {
+        margin-bottom: 20px;
+    }
+}
+
+
+/*==========================||---------------------------||========================*/
+/*==========================||             Ar            ||========================*/
+/*==========================||---------------------------||========================*/
+
+.ar {
+    direction: rtl;
+    text-align: right;
+}
+
+.ar .language::after {
+    left: 0;
+    right: auto;
+}
+
+.ar .mainMenu a::before {
+    right: 0;
+    left: auto;
+}
+
+.ar .teamVector::before {
+    left: auto;
+    right: 0;
+}
+
+.ar .requestDetails {
+    background: url(../images/pic-ar.png) no-repeat;
+    background-size: cover;
+}

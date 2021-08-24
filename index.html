@@ -49,7 +49,7 @@
                     </div>
                     <div class="mainBtns">
                         <a class="primaryBtn" href="#"> <span> Contact us </span> </a>
-                        <div class="menuBtn"> <span></span> <span></span> <span></span> </div>
+                        <div class="menuBtn"> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> </div>
                     </div>
                 </div>                  
                 <div class="navOverlay"></div>            
@@ -289,36 +289,39 @@
     </div>
 
     <!-- Parteners -->
-    <div class="parteners">
+    <div class="parteners secPadding">
         <div class="container">
+            <h2 class="sectionTitle wow fadeInUp"> sponsers </h2>
             <div class="owl-carousel owl-theme owlParteners">
-                <div class="item"> <img src="images/partner-1.png" alt="partener"> </div>
-                <div class="item"> <img src="images/partner-2.png" alt="partener"> </div>
-                <div class="item"> <img src="images/partner-3.png" alt="partener"> </div>
-                <div class="item"> <img src="images/partner-4.png" alt="partener"> </div>
-                <div class="item"> <img src="images/partner-5.png" alt="partener"> </div>
-                <div class="item"> <img src="images/partner-6.png" alt="partener"> </div>
-                <div class="item"> <img src="images/partner-7.png" alt="partener"> </div>
-                <div class="item"> <img src="images/partner-8.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener-2.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener-2.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener-2.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener-2.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener-2.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener.png" alt="partener"> </div>
+                <div class="item"> <img src="images/partener-2.png" alt="partener"> </div>
             </div>
         </div>
     </div>
 
     <!-- Contact   -->
-    <div class="contact">
+    <div class="contact secPadding">
         <div class="container">
-            <div class="sectionHeader wow fadeInUp" data-wow-delay=".3s">
+            <div class="sectionHeader wow fadeInUp" data-wow-delay=".1s">
                 <h1 class="sectionTitle"> Let's contact us </h1>
                 <p class="sectionDecription"> We will be happy to hear from you , so don't be hesitate to get in touch with us. </p>
             </div>
-            <div class="contactForm">
+            <div class="contactForm wow fadeInUp" data-wow-delay=".2s">
                 <form action="">
                     <div class="field">
-                        <label> name </label>
                         <input class="form-control" type="text" placeholder="Mobile number">
                     </div>
                     <div class="field textareaField">
-                        <label> Message </label>
                         <textarea class="form-control" placeholder="Please Enter Your Message"></textarea>
                     </div>
                     <button class="primaryBtn"> <span> send </span></button>
@@ -327,12 +330,12 @@
         </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div class="footer">
+    <!-- Footer  -->
+    <div class="footer secPadding">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-9 col-lg-10 wow fadeInUp">
-                    <div class="footerLogo"> <img src="images/logo.png" alt="logo" class="img-fluid"> </div>
+                <div class="col-12 col-sm-8 col-lg-9 wow fadeInUp">
+                    <img src="images/logo.png" alt="logo" class="img-fluid"> 
                     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     <div class="social">
                         <a class="instagram" href="#"> <i class="icofont-instagram"></i> </a>
@@ -341,7 +344,7 @@
                         <a class="facebook" href="#"> <i class="icofont-facebook"></i> </a>
                     </div>
                 </div>
-                <div class="col-12 col-sm-3 col-lg-2 wow fadeInUp">
+                <div class="col-12 col-sm-4 col-lg-3 wow fadeInUp">
                     <div class="location">
                         <h6> our location </h6>
                         <div class="map">
@@ -387,7 +390,6 @@
                 let willPlayed = $(this).data('video');
                 $('.listLesson').removeClass('active');
                 $(this).addClass('active');
-                console.log(willPlayed);
                 $(parent).show();  
                 let videoTag = document.getElementById('video');
                 videoTag.src = willPlayed;
