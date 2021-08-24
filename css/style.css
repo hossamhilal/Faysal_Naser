@@ -1125,6 +1125,7 @@ textarea:active {
 
 .footer p {
     width: 350px;
+    max-width: 100%;
     margin: 20px 0 25px;
     font-weight: 500;
     font-size: 17px;
@@ -1189,6 +1190,12 @@ textarea:active {
 .ar .language::after {
     left: 0;
     right: auto;
+}
+
+.ar .mainMenu {
+    right: 0;
+    left: auto;
+    transform: translateX(100%);
 }
 
 .ar .mainMenu a::before {
