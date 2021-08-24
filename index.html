@@ -48,7 +48,7 @@
                         </ul>
                     </div>
                     <div class="mainBtns">
-                        <a class="primaryBtn" href="#"> <span> Contact us </span> </a>
+                        <a class="primaryBtn" href="#contact"> <span> Contact us </span> </a>
                         <div class="menuBtn"> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> </div>
                     </div>
                 </div>                  
@@ -103,14 +103,14 @@
     </div>
 
     <!-- service request  -->
-    <div class="serviceRequest secPadding">
+    <div class="serviceRequest secPadding"  id="service_request">
         <div class="container">
             <div class="requestDetails">
                 <div class="row">
                     <div class="col-12 col-sm-6" data-wow-delay=".1s">
                         <h2> Service request </h2>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat non dolor sed consequat. Ut eu mi sed quam volutpat rutrum porttitor vel lorem. Pellentesque ut nunc id ligula porta condimentum. Praesent vehicula aliquam volutpat. Mauris vel mi odio. Duis vel egestas felis. Ut nunc lectus, hendrerit sit amet gravida sed, pulvinar eu neque. Duis quis lectus id quam ultrices suscipit fringilla sed ex. Etiam tempus convallis augue nec elementum. </p>
-                        <a class="primaryBtn" href="#requestModal"> <span> Service request </span></a>
+                        <a class="primaryBtn" href="#" data-toggle="modal" data-target="#requestModal"> <span> Service request </span></a>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
     </div>
 
     <!-- Team  -->
-    <div class="serviceRequest team secPadding">
+    <div class="serviceRequest team secPadding" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 wow fadeInUp">
@@ -129,14 +129,14 @@
                 <div class="col-12 col-sm-6 wow fadeInUp">
                     <h2> Join team </h2>
                     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus Phasellus consequat non dolor sed consequat. consequat non dolor sed consequat. Ut eu mi sed quam volutpat Phasellus consequat non dolor sed consequat.  rutrum porttitor vel lorem. Pellentesque ut nunc id ligula porta Phasellus consequat non dolor sed consequat. condimentum. Praesent vehicula aliquam volutpat. Mauris vel mi odio. Duis vel egestas felis. Ut nunc lectus, hendrerit sit amet gravida sed, pulvinar eu neque. Duis quis lectus id quam ultrices suscipit fringilla sed ex. Etiam tempus convallis augue nec elementum. </p>
-                    <a class="primaryBtn" href="#joinModal"> <span> Join </span></a>
+                    <a class="primaryBtn" href="#" data-toggle="modal" data-target="#joinModal"> <span> Join </span></a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- SERVICES  -->
-    <div class="services secPadding">
+    <div class="services secPadding" id="services">
         <div class="container">
             <h2 class="sectionTitle wow fadeInUp"> Services </h2>
             <div class="sectionContent">
@@ -195,7 +195,7 @@
     </div>
 
     <!-- Work  -->
-    <div class="works secPadding">
+    <div class="works secPadding" id="work">
         <div class="container">
             <div class="sectionHeader wow fadeInUp" data-wow-delay=".1s">
                 <h2 class="sectionTitle"> Our work </h2>
@@ -235,7 +235,7 @@
     </div>
 
     <!-- Institutional  -->
-    <div class="institutional secPadding" id="Institutional">
+    <div class="institutional secPadding" id="institutional">
         <div class="container">
             <div class="countsWrapper">
                 <div class="row">
@@ -289,7 +289,7 @@
     </div>
 
     <!-- Parteners -->
-    <div class="parteners secPadding">
+    <div class="parteners secPadding" id="parteners">
         <div class="container">
             <h2 class="sectionTitle wow fadeInUp"> sponsers </h2>
             <div class="owl-carousel owl-theme owlParteners">
@@ -310,7 +310,7 @@
     </div>
 
     <!-- Contact   -->
-    <div class="contact secPadding">
+    <div class="contact secPadding" id="contact">
         <div class="container">
             <div class="sectionHeader wow fadeInUp" data-wow-delay=".1s">
                 <h1 class="sectionTitle"> Let's contact us </h1>
@@ -350,6 +350,148 @@
                         <div class="map">
                             <iframe width="100%" height="100%" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;coord=24.7136, 46.6753&amp;q=Riydah+(Riydah)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Create radius map</a></iframe>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Request Service Modal  -->
+    <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="sectionHeader">
+                    <h1 class="sectionTitle"> Service request </h1>
+                    <p class="sectionDecription"> We will be happy to serve you. </p>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Mobile number">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="email" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Event type">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Event date">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Event duration">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Service description">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="custom-radio">
+                            <input type="radio" name="gender" value="male" id="male">
+                            <label for="male"> Man photographer </label>
+                        </div>
+                        <div class="custom-radio">
+                            <input type="radio" name="gender" value="female" id="female">
+                            <label for="female"> Woman photographer </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="primaryBtn"> <span> send </span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Team Modal  -->
+    <div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="sectionHeader">
+                    <h1 class="sectionTitle"> Join team </h1>
+                    <p class="sectionDecription"> We will be happy to join us . </p>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Mobile number">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="email" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="upload">
+                            <span class="fileName"> personal photo </span>
+                            <label> 
+                                <i class="icofont-folder-open"></i>
+                                <input type="file" class="uploadBtn" hidden/> 
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Brief about your work">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="field">
+                            <input class="form-control" type="text" placeholder="Equipments">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="upload">
+                            <span class="fileName"> Your work </span>
+                            <label> 
+                                <i class="icofont-folder-open"></i>
+                                <input type="file" class="uploadBtn" hidden/> 
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="custom-radio">
+                            <input type="radio" name="gender" value="male" id="male">
+                            <label for="male"> Man </label>
+                        </div>
+                        <div class="custom-radio">
+                            <input type="radio" name="gender" value="female" id="female">
+                            <label for="female"> Woman </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="primaryBtn"> <span> send </span></button>
                     </div>
                 </div>
             </div>

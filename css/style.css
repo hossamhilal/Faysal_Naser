@@ -18,14 +18,8 @@
     --black: #202020;
     --text: #6B6B6B;
     --textLight: #ABABAB;
-    --opacity: rgba(58, 163, 219, 0.1);
     --bg: #191919;
     --bgLight: #1E1E1E;
-    --border: 1px solid #F3F3F3;
-    --unnamed-color-ffffff: #FFFFFF;
-    --unnamed-color-ffc64e: #FFC64E;
-    --unnamed-color-3c3c3c: #3C3C3C;
-    --unnamed-color-ffea70: #FFEA70;
 }
 
 
@@ -349,13 +343,13 @@ textarea:active {
     top: 16px;
 }
 
-.menuBtn.open span ,
+.menuBtn.open span,
 .menuBtn:hover span {
     background: var(--primaryColor);
 }
 
 .navOverlay {
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
     position: fixed;
     top: 0;
     left: 0;
@@ -617,25 +611,25 @@ textarea:active {
     .secPadding {
         padding: 30px 0;
     }
-    
+
     .requestDetails {
         padding: 0;
         background-position: bottom right;
         background-size: 125% 60%;
     }
-    
+
     .serviceRequest h2 {
         font-size: 30px;
         line-height: 45px;
         margin: 0;
     }
-    
+
     .serviceRequest p {
         font-size: 13px;
         line-height: 25px;
         margin-bottom: 15px;
     }
-    
+
     .serviceRequest .primaryBtn {
         min-width: 150px;
         height: 40px;
@@ -750,29 +744,29 @@ textarea:active {
         line-height: 45px;
         margin-bottom: 20px;
     }
-    
+
     .services .row {
         padding: 0 5px;
     }
-    
+
     .services .col-6 {
         padding: 0 5px;
     }
-    
+
     .service {
         height: 140px;
         margin-bottom: 10px;
     }
-    
+
     .serviceIcon {
         width: 45px;
         height: 45px;
     }
-    
+
     .serviceIcon img {
         max-width: 100%;
     }
-    
+
     .service h3 {
         font-size: 13px;
         line-height: 20px;
@@ -847,7 +841,7 @@ textarea:active {
         height: 220px;
         margin-bottom: 15px;
     }
-    
+
     .work .hover {
         padding: 15px;
     }
@@ -970,31 +964,31 @@ textarea:active {
         line-height: 40px;
         margin-bottom: 10px;
     }
-    
+
     .institutional p {
         font-size: 14px;
         line-height: 25px;
     }
-    
+
     .features {
         margin-top: 25px;
     }
-    
+
     .feature h4 {
         font-size: 16px;
     }
-    
+
     .feature h5 {
         font-size: 13px;
         margin: 0;
     }
-    
+
     .playVideo {
         width: 120px;
         height: 120px;
         margin-inline-start: -23px;
     }
-    
+
     .playVideo span {
         width: 40px;
         height: 40px;
@@ -1171,12 +1165,168 @@ textarea:active {
     .location {
         max-width: 100%;
     }
-    
+
     .location h6 {
         margin-bottom: 20px;
     }
 }
 
+
+/*==========================||---------------------------||========================*/
+/*==========================||           Modal           ||========================*/
+/*==========================||---------------------------||========================*/
+
+@media (min-width:768px) {
+    .modal-dialog {
+        max-width: 600px;
+        ;
+    }
+}
+
+@media (min-width:1024px) {
+    .modal-dialog {
+        max-width: 850px;
+        ;
+    }
+}
+
+@media (min-width:1300px) {
+    .modal-dialog {
+        max-width: 1100px;
+        ;
+    }
+}
+
+.modal-content {
+    background: var(--bgLight);
+    padding: 40px 12%;
+}
+
+.modal .sectionHeader {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.modal .sectionTitle {
+    font-size: 30px;
+    margin-bottom: 11px;
+}
+
+.modal .row {
+    margin: 0 -10px;
+}
+
+.modal .col-12 {
+    padding: 0 10px;
+}
+
+.modal .field {
+    margin-bottom: 13px;
+}
+
+.custom-radio {
+    margin: 5px 0 10px;
+    position: relative;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.custom-radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.custom-radio label {
+    margin: 0;
+    padding-inline-start: 30px;
+    position: relative;
+}
+
+.custom-radio input:checked+label {
+    color: var(--white);
+}
+
+.custom-radio label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--text);
+    border-radius: 50%;
+}
+
+.custom-radio input:checked+label::before {
+    border-color: var(--primaryColor);
+}
+
+.custom-radio input:checked+label::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--primaryColor);
+    border-radius: 50%;
+}
+
+.modal .primaryBtn {
+    width: 100%;
+    margin: 20px 0 0 0;
+}
+
+.upload {
+    height: 45px;
+    border: 1px solid var(--text);
+    border-radius: 4px;
+    margin-bottom: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+}
+
+.fileName {
+    color: var(--text);
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.upload label {
+    margin: 0;
+    position: relative;
+    width: 25px;
+    margin-inline-start: 5px;
+    text-align: end;
+    color: var(--primaryColor);
+    cursor: pointer;
+}
+
+.upload input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .modal-content {
+        padding: 20px 3%;
+    }
+    
+}
 
 /*==========================||---------------------------||========================*/
 /*==========================||             Ar            ||========================*/

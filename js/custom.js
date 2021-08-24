@@ -20,6 +20,16 @@
         $('body').removeClass('stopScroll');  
     });
 
+    // Scroll Menu
+    $('.mainMenu a').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top 
+        }, 1200, 'linear');
+        $('.mainMenu li').removeClass('active');
+        $(this).parent().addClass('active');
+    });
+
     // Check if Rtl 
     var rtlVal = true ;   
     $('body').hasClass('en') ? rtlVal = false : rtlVal = true;
@@ -75,23 +85,30 @@
         }
     });
 
-    
 
-    // // INPUT FOCUS ANIMATION 
-    // $('.inputField input').focus(function(){
-    //     $(this).parent('.inputField').addClass('focused');
-    // });
+    // Upload File 
+    // const actualBtn = document.getElementById('actual-btn');
 
-    // $('.inputField input').each(function() { 
-    //     if ($(this).val() != "") {
-    //         $(this).parent('.inputField').addClass('focused');   
-    //     }
-    // });
+    // const fileChosen = document.getElementById('file-chosen');
 
-    // $('.inputField input').focusout(function(){
-    //     if($(this).val() === "")
-    //     $(this).parent('.inputField').removeClass('focused');
-    // });
+    let input = $('.upload').find('input');
+
+    $(input).on('change', function(){
+        console.clear();
+        console.log('======== Changed =============');
+        let file = $(this)[0].files[0].name;
+        console.log(file)
+        let fileName = $(this).parents('.upload').find('.fileName');
+        $(fileName).text(file);
+    });
+
+    // actualBtn.addEventListener('change', function(){
+    // fileChosen.textContent = this.files[0].name
+    // })
+
+
+
+
 
     // iniat WOW Js
     new WOW().init();
