@@ -26,6 +26,9 @@
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top 
         }, 1200, 'linear');
+        $('.mainMenu').removeClass('opend');
+        $('.navOverlay').removeClass('opend');
+        $('.menuBtn').removeClass('open');
         $('.mainMenu li').removeClass('active');
         $(this).parent().addClass('active');
     });
@@ -87,28 +90,12 @@
 
 
     // Upload File 
-    // const actualBtn = document.getElementById('actual-btn');
-
-    // const fileChosen = document.getElementById('file-chosen');
-
     let input = $('.upload').find('input');
-
     $(input).on('change', function(){
-        console.clear();
-        console.log('======== Changed =============');
         let file = $(this)[0].files[0].name;
-        console.log(file)
         let fileName = $(this).parents('.upload').find('.fileName');
         $(fileName).text(file);
     });
-
-    // actualBtn.addEventListener('change', function(){
-    // fileChosen.textContent = this.files[0].name
-    // })
-
-
-
-
 
     // iniat WOW Js
     new WOW().init();
